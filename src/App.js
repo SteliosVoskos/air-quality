@@ -1,7 +1,9 @@
+import Airquality from "./components/Airquality/Airquality";
+
 function App() {
   return (
     <div>
-      <p>Air quality</p>
+      <Airquality />
     </div>
   );
 }
