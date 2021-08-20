@@ -22,5 +22,5 @@ export default function Heatmap() {
     L.heatLayer(points).addTo(map);
   }, []);
 
-  return <div id="map" style={{ height: "300px", width: "60%", border: "transprent", borderRdius: "20px" }}></div>;
+  return <div id="map" style={{ height: "300px", width: "60%", border: "transprent", borderRdius: "20px", margin: "10% 1em" }}></div>;
 }

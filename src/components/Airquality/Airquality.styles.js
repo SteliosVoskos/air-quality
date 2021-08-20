@@ -10,20 +10,34 @@ function assignColor(prop) {
 }
 
 export const Container = styled.div`
-    font-family: "Sen", sans-serif;
-    width: 100%
-    height: auto;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1em;
+    height: 924px;
+    background: black;
+    background-size: cover;
+`;
+
+export const TrasparentLayer = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1024px;
+    width: 100%;
+    background: url('https://storage.googleapis.com/geotab_wfm_production_cms_storage/CMS-Images-production/smart-city-hero-image@2x.jpg');
+    padding; 1em;
+    display: flex;
+    flex-direction: row;
 `;
 
 export const AirQualityContainer = styled.div`
     width: ${props => props.showPollutantGraph === true ? '40%' : '20%'};
     transition: ${props => props.showPollutantGraph === true ? '1s' : '0'};
     margin: 0 auto;
-    height: auto;
+    height: 650px;
     padding: 1em 1em 0 1em;
     display: flex;
     flex-direction: column;
@@ -39,25 +53,29 @@ export const AirqualityValuesContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     &:hover {
         font-weight: 500;
     }
 `;
 
+export const PollutantName = styled.h4`
+    font-size: 1.5em;
+    margin: .5em;
+    font-weight: light;
+`;
+
 export const PollutantValue = styled.p`
     text-align: center;
     margin: 0 auto;
+    font-size: 1.2em;
     color: ${prop => assignColor(prop)} !important;
 `;
 
 export const PollutantLink = styled.a`
-    font-size: 1em;
-    width: 26px;
-    height: 20px;
+    font-size: 1.2em;
     color: #6c757d;
-    border: 1px solid #6c757d;
-    border-radius: 50%;
     text-align: center;
     padding-bottom: 24px;
 
