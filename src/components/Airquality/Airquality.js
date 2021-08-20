@@ -4,9 +4,10 @@ import Heatmap from './Heatmap';
 import { AirqualityValuesContainer, Container, Indicator, IndicatorValue, PollutantName, Pulser, PollutantValue, PollutantLink, StationName, TrasparentLayer, AirQualityContainer } from './Airquality.styles';
 
 const Airquality = (props) => {
+    const { fetchAirQualityData } = props;
     useEffect(() => {
-        props.fetchAirQualityData();
-    }, [props.fetchAirQualityData]);
+        fetchAirQualityData();
+    }, [fetchAirQualityData]);
 
     if (!props.data || props.data.length === 0) {
         return <span>...</span>
