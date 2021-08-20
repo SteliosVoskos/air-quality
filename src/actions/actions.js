@@ -20,6 +20,38 @@ export function fetchAirQualityDataError(error) {
     };
 }
 
+export function fetchAirqualityHistoricalDataPending() {
+    return {
+        type: actionType.FETCH_AIR_QUALITY_HISTORICAL_DATA_PENDING
+    };
+}
+
+export function fetchAirqualityHistoricalDataSuccess(data) {
+    return {
+        type: actionType.FETCH_AIR_QUALITY_HISTORICAL_DATA_SUCCESS,
+        data
+    };
+}
+
+export function fetchAirqualityHistoricalDataError() {
+    return {
+        type: actionType.FETCH_AIR_QUALITY_HISTORICAL_DATA_ERROR
+    };
+};
+
+export function fetchAirqualityHistoricalData() {
+    return (dispatch) => {
+        dispatch(fetchAirqualityHistoricalDataPending())
+        fetch('yourendpoint')
+            .then(data => data.json())
+            .then(response => dispatch(fetchAirqualityHistoricalDataSuccess(response)))
+            .catch(error => {
+                dispatch(fetchAirqualityHistoricalDataError());
+                return error;
+            })
+    }
+}
+
 export function fetchHistoricalDataForPollutantPending() {
     return {
         type: actionType.FETCH_HISTORICAL_DATA_FOR_POLLUTANT_PENDING
