@@ -1,4 +1,4 @@
-import Airquality from "./components/Airquality/Airquality";
+import Airquality from "./containers/Airquality";
 import { Provider } from 'react-redux';
 
 import store from './store';
