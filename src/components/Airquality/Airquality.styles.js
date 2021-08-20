@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 function assignColor(prop) {
     if (prop.indicator === 'Low') {
         return '#28a745';
@@ -133,4 +133,35 @@ export const HistoricalDataGraphContainer = styled.div`
     width: 40%;
     margin-top: -10em;
     background-color: rgba(255, 255, 255, 0.7);
+`;
+
+const pulse = keyframes`
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(51, 217, 178, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(51, 217, 178, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(51, 217, 178, 0);
+  }
+`;
+
+export const Pulser = styled.div`
+    border-radius: 50%;
+    margin: 10px;
+    height: 20px;
+    width: 20px;
+    transform: scale(1);
+    background: rgba(51, 217, 178, 1);
+    box-shadow: 0 0 0 0 rgba(51, 217, 178, 1);
+    animation: ${pulse} 2s infinite;
+    position: absolute;
+    top: 5px;
+    right: 5px;
 `;
