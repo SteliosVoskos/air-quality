@@ -63,7 +63,7 @@ export const AirqualityValuesContainer = styled.div`
 export const PollutantName = styled.h4`
     font-size: 1.5em;
     margin: .5em;
-    font-weight: light;
+    font-weight: lighter;
 `;
 
 export const PollutantValue = styled.p`

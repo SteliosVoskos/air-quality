@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import AnimatedNumber from "animated-number-react";
-import { Helmet } from 'react-helmet';
 import Heatmap from './Heatmap';
 import { AirqualityValuesContainer, Container, Indicator, IndicatorValue, PollutantName, Pulser, PollutantValue, PollutantLink, StationName, TrasparentLayer, AirQualityContainer } from './Airquality.styles';
+
 const Airquality = (props) => {
     useEffect(() => {
         props.fetchAirQualityData();
-    }, []);
+    }, [props.fetchAirQualityData]);
 
     if (!props.data || props.data.length === 0) {
         return <span>...</span>
@@ -27,12 +27,8 @@ const Airquality = (props) => {
             </Indicator>
         )
     }
-    console.log(props.data)
     return (
         <Container>
-            <Helmet>
-                <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-            </Helmet>
             <TrasparentLayer>
                 <Heatmap />
                 <AirQualityContainer>
